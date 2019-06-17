@@ -1,5 +1,9 @@
 {
   "name": "pspdfkit-web-example-react",
+  "browserslist": [
+    "last 2 version",
+    "not dead"
+  ],
   "version": "2019.3.0",
   "description": "Standalone and offline PDF viewer web application built with PSPDFKit for Web and React",
   "keywords": [
@@ -19,6 +23,7 @@
   "license": "SEE LICENSE IN https://pspdfkit.com/license.pdf",
   "readme": "https://pspdfkit.com/guides/web",
   "dependencies": {
+    "pspdfkit": "https://customers.pspdfkit.com/npm/TRIAL-MpHJWEi0Fxf6Fsd9Ik0HGjzNb0jWp4Y29Lxtl8MrYT0lQAl4rrC9J87rQZOjH-ZlXjUtluJ5ETYUgVCNQnsETg/latest.tar.gz",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "2.1.8"
@@ -26,9 +31,9 @@
   "scripts": {
     "verify-installation": "node scripts/verify-install.js && node scripts/copy-pspdfkit-files.js",
     "prestart": "npm run verify-installation",
-    "start": "cross-env REACT_APP_PSPDFKIT_LICENSE_KEY='YOUR_LICENSE_KEY_GOES_HERE' react-scripts start",
+    "start": "cross-env REACT_APP_PSPDFKIT_LICENSE_KEY='siMKkd_SN8EwGgMxVsQUPExu8-sajfHtbm4hZ9pNl4PQwLv-qkAOGhOJyrntSI9gL6dtELSdCFUkJ2LTQAIr6-BSizKwhvl5r4YEnRmWhFz9uX51RPnpcfGFNPug359U3TPmdRcRxKJlKFnUWXFbkDBN4GP7J3MNjv21WQl4ACBfdDgHxqT89aR5YujbubuJXgMKLOGVHmkon49-BO11zI320b_yL6XMcJP3Mqwa7WfwXdQJs3CSJmXGyyO2P7meJ0owFH_dOI8Ag_NrNDdGayzUacKbHv3sO6edqntpzETztVkmnXvugA4Rg4ekFt4P8_B-1qkFPsK84rOcaQgzPVr64zSbf-MOHWqQIruwkcHxzLuk9qYOoZ1_v0lEvema51_sN_N1NIoo9wZUBZD_m59wsh1iSTTMEGVRwwQ4A_mvCqi3TIXbfUY68tFhNQ6P' react-scripts start",
     "prebuild": "npm run verify-installation",
-    "build": "cross-env REACT_APP_PSPDFKIT_LICENSE_KEY='YOUR_LICENSE_KEY_GOES_HERE' react-scripts build",
+    "build": "cross-env REACT_APP_PSPDFKIT_LICENSE_KEY='siMKkd_SN8EwGgMxVsQUPExu8-sajfHtbm4hZ9pNl4PQwLv-qkAOGhOJyrntSI9gL6dtELSdCFUkJ2LTQAIr6-BSizKwhvl5r4YEnRmWhFz9uX51RPnpcfGFNPug359U3TPmdRcRxKJlKFnUWXFbkDBN4GP7J3MNjv21WQl4ACBfdDgHxqT89aR5YujbubuJXgMKLOGVHmkon49-BO11zI320b_yL6XMcJP3Mqwa7WfwXdQJs3CSJmXGyyO2P7meJ0owFH_dOI8Ag_NrNDdGayzUacKbHv3sO6edqntpzETztVkmnXvugA4Rg4ekFt4P8_B-1qkFPsK84rOcaQgzPVr64zSbf-MOHWqQIruwkcHxzLuk9qYOoZ1_v0lEvema51_sN_N1NIoo9wZUBZD_m59wsh1iSTTMEGVRwwQ4A_mvCqi3TIXbfUY68tFhNQ6P' react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
