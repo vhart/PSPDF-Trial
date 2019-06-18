@@ -1,6 +1,15 @@
 import React, { Component } from "react";
 import PSPDFKitWeb from "pspdfkit";
+const { InkAnnotation, toSerializableObject } = PSPDFKitWeb.Annotations;
+// https://pspdfkit.com/guides/web/current/importing-exporting/instant-json/
+// https://pspdfkit.com/guides/web/current/annotations/annotation-saving-mechanism/
 
+/**
+ * https://pspdfkit.com/guides/web/current/importing-exporting/instant-json/
+ * There are some limitations with Instant JSON, in that not all annotation types are currently supported, 
+ * and only the properties that can be handled correctly across all of PSPDFKit’s supported platforms (iOS, Android, and Web) are serialized. 
+ * For more information, check out the detailed JSON Format guide article.
+ */
 export default class PSPDFKit extends Component {
   constructor(props, context) {
     super(props, context);
@@ -23,8 +32,27 @@ export default class PSPDFKit extends Component {
       pdf: props.pdfUrl,
       container: this._container,
       licenseKey: props.licenseKey,
-      baseUrl: props.baseUrl
+      baseUrl: props.baseUrl,
+      autoSaveMode: PSPDFKitWeb.AutoSaveMode.INTELLIGENT
     });
+
+    this._instance.addEventListener("annotations.create", (createdAnnotations) => {
+      console.log(`annotations.create`)
+      console.log(createdAnnotations.toArray())
+    })
+
+    this._instance.addEventListener("annotations.delete", (annotation) => {
+      console.log(`annotations.delete`)
+      console.log(annotation.toSerializableObject())
+    })
+
+    this._instance.addEventListener("annotations.didSave", async () => {
+      const instantJSON = await this._instance.exportInstantJSON();
+
+      console.log(`annotations.didSave`)
+      console.log(instantJSON)
+    });
+
     console.log("Successfully mounted PSPDFKit", this._instance);
   }
 
