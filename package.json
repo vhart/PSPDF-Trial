@@ -23,6 +23,10 @@
   "license": "SEE LICENSE IN https://pspdfkit.com/license.pdf",
   "readme": "https://pspdfkit.com/guides/web",
   "dependencies": {
+    "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
     "pspdfkit": "https://customers.pspdfkit.com/npm/TRIAL-MpHJWEi0Fxf6Fsd9Ik0HGjzNb0jWp4Y29Lxtl8MrYT0lQAl4rrC9J87rQZOjH-ZlXjUtluJ5ETYUgVCNQnsETg/latest.tar.gz",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
